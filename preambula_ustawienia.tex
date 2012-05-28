@@ -1,0 +1,90 @@
+% ------------------------------------------------------------------------
+% USTAWIENIA
+% ------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+%   Kropki po numerach sekcji, podsekcji, itd.
+%   Np. 1.2. Tytu³ podrozdzia³u
+% ------------------------------------------------------------------------
+\makeatletter
+    \def\numberline#1{\hb@xt@\@tempdima{#1.\hfil}}                      %kropki w spisie treœci
+    \renewcommand*\@seccntformat[1]{\csname the#1\endcsname.\enspace}   %kropki w treœci dokumentu
+\makeatother
+
+% ------------------------------------------------------------------------
+%   Numeracja równañ, rysunków i tabel
+%   Np.: (1.2), gdzie:
+%   1 - numer sekcji, 2 - numer równania, rysunku, tabeli
+%   Uwaga ogólna: o otoczeniu figure ma byæ najpierw \caption{}, potem \label{}, inaczej odnoœnik nie dzia³a!
+% ------------------------------------------------------------------------
+\makeatletter
+    \@addtoreset{equation}{section} %resetuje licznik po rozpoczêciu nowej sekcji
+    \renewcommand{\theequation}{{\thesection}.\@arabic\c@equation} %dodaje kropkê
+
+    \@addtoreset{figure}{section}
+    \renewcommand{\thefigure}{{\thesection}.\@arabic\c@figure}
+
+    \@addtoreset{table}{section}
+    \renewcommand{\thetable}{{\thesection}.\@arabic\c@table}
+\makeatother
+
+% ------------------------------------------------------------------------
+% Tablica
+% ------------------------------------------------------------------------
+\newenvironment{tablica}[3]
+{
+    \begin{table}[!tb]
+    \centering
+    \caption[#1]{#2}
+    \vskip 9pt
+    #3
+}{
+    \end{table}
+}
+
+% ------------------------------------------------------------------------
+% Dostosowanie wygl¹du pozycji listy \todos, np. zamiast 'p.' jest 'str.'
+% ------------------------------------------------------------------------
+\renewcommand{\todoitem}[2]{%
+    \item \label{todo:\thetodo}%
+    \ifx#1\todomark%
+        \else\textbf{#1 }%
+    \fi%
+    (str.~\pageref{todopage:\thetodo})\ #2}
+\renewcommand{\todoname}{Do zrobienia...}
+\renewcommand{\todomark}{~uzupe³niæ}
+
+% ------------------------------------------------------------------------
+% Definicje
+% ------------------------------------------------------------------------
+\def\nonumsection#1{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+    }
+\def\nonumsubsection#1{%
+    \subsection*{#1}%
+    \addcontentsline{toc}{subsection}{#1}%
+    }
+\reversemarginpar %umieszcza notki po lewej stronie, czyli tam gdzie jest wiêcej miejsca
+\def\notka#1{%
+    \marginpar{\footnotesize{#1}}%
+    }
+\def\mathcal#1{%
+    \mathscr{#1}%
+    }
+\newcommand{\atp}{ATP/EMTP} % Inaczej: \def\atp{ATP/EMTP}
+
+% ------------------------------------------------------------------------
+% Inne
+% ------------------------------------------------------------------------
+\frenchspacing                      %nie pamiêtam co to jest, ale u¿ywam
+%\flushbottom                       %nie pamiêtam co to jest, ale nie u¿ywam
+%\raggedbottom                      %nie pamiêtam co to jest, ale nie u¿ywam
+\hyphenation{ATP/-EMTP}             %dzielenie wyrazu w ¿¹danym miejscu
+\setlength{\parskip}{3pt}           %odstêp pomiêdzy akapitami
+\linespread{1.2}                    %odstêp pomiêdzy liniami (interlinia)
+\setcounter{tocdepth}{4}            %uwzglêdnianie w spisie treœci czterech poziomów sekcji
+\setcounter{secnumdepth}{4}         %numerowanie do czwartego poziomu sekcji w³¹cznie
+\titleformat{\paragraph}[hang]      %wygl¹d nag³ówków
+{\normalfont\sffamily\bfseries}{\theparagraph}{1em}{}
+%\definecolor{niebieski}{rgb}{0.0,0.0,0.5}

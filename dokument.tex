@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+
+    \input{preambula_pakiety.tex}
+    \input{preambula_ustawienia.tex}
+
+    \title{Aplikacja\\wspomagaj¹ca katalogowanie plików.}
+    \author{Pawe³ K³osiewicz}
+
+    %polecenia zdefiniowane w pakiecie strona_tytulowa.sty
+    \uczelnia{WY¯SZA SZKO£A TECHNOLOGII INFORMATYCZNYCH W~WARSZAWIE}
+    \instytut{Wydzia³ Informatyki}
+    \promotor{prof. dr. hab. in¿. A. Barczak}
+    \praca{PRACA DYPLOMOWA}
+    \rok{2012}
+    \draft  %odkomentarzuj t¹ liniê, je¿eli wydruk ma byæ draftem -- wprowadza informacjê o drafcie na stronie tytu³owej
+    %koniec poleceñ zdefiniowanych przez pakiet strona_tytulowa.sty
+
+    %skorowidz - nie u¿ywam
+    %\makeindex
+    %koniec skorowidza
+
+\begin{document}
+    \renewcommand{\figurename}{Rys.}    %musi byc pod \begin{document}, bo w~tym miejscu pakiet 'babel' narzuca swoje ustawienia
+    \renewcommand{\tablename}{Tab.}     %j.w.
+    % \pagenumbering{roman}               %numeracja stron: rzymska
+    \thispagestyle{empty}               %na tej stronie: brak numeru
+    \stronatytulowa                     %strona tytu³owa tworzona przez pakiet strona_tytulowa.tex
+
+    %podzi¿kowania
+    \newpage
+    ~   %potrzebne dla \vfill
+    \vfill
+    {\sffamily
+    \begin{flushright}
+        \begin{tabular}{l}
+        Chcia¿bym w~tym miejscu podziêkowaæ:\\
+        \\
+        Kolegom i kole¿ankom z Klubu\\
+        -- za udane wakacje, które przyczyni³y siê\\
+        do powstania tej pracy\\
+        \\
+        Bosmanowi ze Sztynortu\\
+        -- za naprawienie silnika, itp.\\
+        \end{tabular}
+    \end{flushright}
+    }
+    \vskip0.5in
+    \thispagestyle{empty}
+    \newpage
+    %koniec podziêkowañ
+
+    %formatowanie spisu treœci i~nag³wków
+    \renewcommand{\cftbeforesecskip}{8pt}
+    \renewcommand{\cftsecafterpnum}{\vskip 8pt}
+    \renewcommand{\cftparskip}{3pt}
+    \renewcommand{\cfttoctitlefont}{\Large\bfseries\sffamily}
+    \renewcommand{\cftsecfont}{\bfseries\sffamily}
+    \renewcommand{\cftsubsecfont}{\sffamily}
+    \renewcommand{\cftsubsubsecfont}{\sffamily}
+    \renewcommand{\cftparafont}{\sffamily}
+    %koniec formatowania spisu treœci i nag³wków
+
+    \hypersetup{linkcolor=black}
+    \tableofcontents    %spis treœci
+    \thispagestyle{empty} % nie numeruj strony na spisie treœci
+    \newpage
+
+    \setcounter{page}{1} % zacznij numeracjê od wykazów
+
+    \input{wykaz_skrotow.tex}
+    \newpage
+
+    %przeniesienie warto¿ci licznika stron na strony numerowane innym stylem (arabic)
+    \newcounter{licznikStron}
+    \setcounter{licznikStron}{\value{page}}
+    \pagenumbering{arabic}
+    \setcounter{page}{\value{licznikStron}}
+    %koniec przeniesienia...
+
+    %tre³ g³wna dokumentu
+    \input{tresc_dokumentu.tex}
+    \newpage
+    %koniec tre¿ci g³wnej dokumentu
+
+    %bibliografia
+    %GATHER{bibliografia.bib}                       %polecenie programu WinEdt, w³¹cza plik do drzewa 'projektu'
+    \bibliographystyle{unsrtnat}                    %styl bibliografii: w kolejnoœci cytowania, zrozumia³y dla pakietu hyperref.sty
+    \addcontentsline{toc}{section}{Literatura}      %musi by¿ wy¿ej ni¿ \bibliography{bibliografia}, ¿eby w~spisie treœci by³ w³aœciwy numer strony
+    \bibliography{bibliografia}
+    %koniec bibliografii
+
+    %spis rysunków i~tablic
+    \input{spis_rysunkow.tex}
+
+    %za³czniki
+    \newpage
+    \appendix
+    \renewcommand{\appendixtocname}{Za³¹czniki}
+    \renewcommand{\appendixpagename}{~\vspace{8cm} \begin{center}Za³¹czniki\end{center}\newpage}
+    \thispagestyle{empty}
+    \addappheadtotoc
+    \appendixpage
+    \input{zalacznik.tex}
+    %koniec za³czniów
+
+    %skorowidz - nie u¿ywam
+%    \index{Napis}
+%    \index{Napis!Podnapis}
+%    \printindex
+    %koniec skorowidza
+
+    %lista rzeczy do zrobienia: wypisuje na ko¿cu dokumentu, patrz: pakiet todo.sty
+    \todos  
+    %koniec listy rzeczy do zrobienia
+\end{document}
