@@ -50,16 +50,29 @@ Tutaj teza pracy, jeœli trzeba...
 Tutaj treœæ rozdzia³u. Poni¿ej kolejne podrozdzia³y...
 
 \subsection{Wymagania funkcjonalne}
-Tutaj treœæ podrozdzia³u.
+
+Aplikacja powinna pozwalaæ na szybkie znajdywanie dodanych do niej plików bez potrzeby znajomoœci nazwy pliku a tylko danych okreœlajcych go.
+
+Aplikacja powinna mieæ mo¿liwoœæ automatycznego uporz¹dkowania plików wg. wyznaczonego schematu.
+
+Aplikacja powinna dawaæ mo¿liwoœæ rozszerzenia o dodatkow¹ funkcjonalnoœæ - œci¹gniêcie napisów do wybranych filmów czy ok³adek do znalezionych albumów z muzyk¹.
 
 \subsection{Wymagania niefunkcjonalne}
-Tutaj treœæ pod-podrozdzia³u.
+
+Aplikacja powinna byæ w stanie znaleŸæ opisy do filmów aktualnie bêd¹cych w kinach.
 
 \section{Wykorzystane technologie}
 % \noindent Tutaj treœæ pod-pod-podrozdzia³u.
 \subsection{Zastosowane jêzyki i technologie}
 \subsubsection{MongoDB}
+
+Do projektu u¿y³em obiektowej bazy danych MongoDB. W przeciwieñstwie do u¿ywania zwi¹zków w nazach relacyjncych nie musimy tworzyæ na sztywno zwi¹zków (nawet nie mamy standardowo takiej opcji), wszystkie operacje kojarzenia ze sob¹ encji musz¹ byæ definiowane w logice programu.
+
 \subsubsection{Ruby}
+
+Ruby jest obiektowym jêzykiem programowania trzeciej generacji. Swoj¹ sk³adniê wzoruje na Perlu, Smalltalku, Eiffel i Lispie\cite{wiki:ruby}. Moc jêzyka drzemie w uproszczonej sk³adni, porzucaj¹cej niektóre niepotrzebne znaki m.in. œrednika na koñcach instrukcji czy te¿ nawiasów, przy przekazywaniu parametrów do funkcji gdy podawany jest tylko jeden parametr. Wszystkie wprowadzone zabiegi maj¹ na celu zwiêkszenie czytelnoœci kodu.
+
+Od samych pocz¹tków jêzyk jest dostosowany do budowania aplikacji w paradygmacie \footnote[TDD]{TDD -- (Test Driven Development) proces wytwarzania oprogramowania opieraj¹cy siê na powtarzaniu krótkich cykli - tworzenia testu, zawaleniu go, napisaniu kawa³ku programu, przetestowaniu czy kod osi¹gn¹³ oczekiwany rezultat.}.
 
 \subsection{Wykorzystane narzêdzia wspomagaj¹ce}
 \subsubsection{\LaTeX{}}
