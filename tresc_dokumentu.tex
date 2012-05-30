@@ -1,21 +1,13 @@
 \section{Wstêp}
 \suppressfloats[t]  %¿eby obiekt ruchomy (rysunek, tablica, itp.) nie pojawi³ siê u góry tej strony
 
-Przyk³ady odnoœników. Odnoœnik do literatury~\cite{slepian}. Drugi odnoœnik do
-literatury~\cite{bronsztejn}. Kilka odnoœników do
-literatury~\cite{greenwood,feynman,fichtenholz,slepian}. Wyjaœniono to na
-rys.~\ref{fig:rysunek}. Równanie~(\ref{eq:rownanie}) opisuje jak¹œ zale¿noœæ. Wyjaœniono to
-w za³¹czniku \ref{sec:podrozdzial_zalacznika}. Chodzi tu o
-zale¿noœæ~(\ref{eq:rownanie_w_zalaczniku}) na str.~\pageref{eq:rownanie_w_zalaczniku}.
-Przyk³adowe parametry podano w~tab.~\ref{tab:przykladowa_tablica}. Jakiœ adres internetowy:
-\url{http://www.ee.pw.edu.pl/~szewczyk/}.
-
-
-Równanie:
-\begin{equation}
-    \label{eq:rownanie}
-    i(t) =  \left(i_0 - {E\over R}\right)e^{-(R/L) t} + {E\over R}.
-\end{equation}
+Przyk³ady odnoœników. Odnoœnik do literatury~\cite{slepian}. 
+Drugi odnoœnik do literatury~\cite{bronsztejn}. 
+Kilka odnoœników do literatury~\cite{greenwood,feynman,fichtenholz,slepian}. 
+Wyjaœniono to na rys.~\ref{fig:rysunek}. 
+Równanie~opisuje jak¹œ zale¿noœæ. 
+Przyk³adowe parametry podano w~tab.~\ref{tab:przykladowa_tablica}. 
+Jakiœ adres internetowy:\url{http://www.ee.pw.edu.pl/~szewczyk/}.
 
 \begin{figure}[!tb]
     \centering
@@ -28,22 +20,6 @@ stronie.}
     \label{fig:rysunek}
 \end{figure}
 
-
-\begin{figure}[!tb]
-    \begin{center}
-    \input{wykres.tex}
-    \caption{Przyk³adowy wykres z Gnuplota.}
-    \label{rys:przykladowy_gnuplot}
-    \end{center}
-\end{figure}
-
-
-\begin{figure}[!tb]
-\begin{center}
-ssfds
-\caption{Przyk³adowy obwód elektryczny (pakiet circ.sty).}\label{rys:przykladowy_obwod}
-\end{center}
-\end{figure}
 
 %ustawienia tablicy
 \setlength{\tabcolsep}{1.0em}
@@ -65,54 +41,45 @@ ssfds
 
 
 \subsection{Cel i~zakres pracy}
-Tutaj cel i~zakres pracy, jeœli trzeba...
+
 
 \subsection{Teza pracy}
 Tutaj teza pracy, jeœli trzeba...
 
-\section{Tytu³ rozdzia³u}
+\section{Specyfikacja wymagañ}
 Tutaj treœæ rozdzia³u. Poni¿ej kolejne podrozdzia³y...
 
-\subsection{Tytu³ podrozdzia³u}
+\subsection{Wymagania funkcjonalne}
 Tutaj treœæ podrozdzia³u.
 
-\subsubsection{Tytu³ pod-podrozdzia³u}
+\subsection{Wymagania niefunkcjonalne}
 Tutaj treœæ pod-podrozdzia³u.
 
-\paragraph{Tytu³ pod-pod-podrozdzia³u}
-\noindent Tutaj treœæ pod-pod-podrozdzia³u.
+\section{Wykorzystane technologie}
+% \noindent Tutaj treœæ pod-pod-podrozdzia³u.
+\subsection{Zastosowane jêzyki i technologie}
+\subsubsection{MongoDB}
+\subsubsection{Ruby}
 
-\subsection{Tytu³ kolejnego podrozdzia³u}
+\subsection{Wykorzystane narzêdzia wspomagaj¹ce}
+\subsubsection{\LaTeX{}}
+\subsubsection{Git}
 Tutaj treœæ kolejnego podrozdzia³u.
 
-\section{Tytu³ kolejnego rozdzia³u}
-Kod Ÿród³owy jakiegoœ programu (w NAP'ie, ale nie bêdzie dzia³a³, bo go obci¹³em ¿eby by³
-krótszy).
+\section{Diagramy}
+\subsection{Diagramy klas}
+\subsection{Diagramy sekwencji}
+\subsection{Diagramy przypadków}
 
-{\small
-\begin{lstlisting}[numbers=left,numberstyle=\tiny,keywords={r,l,c},morekeywords={sin,circuit,time,tr,probe,run,end,tab2,diode},keywordstyle={\color{black}\bfseries},stringstyle=\ttfamily,showspaces=false,frame=leftline]
-*circuit
+\section{Opis funkcjonalnoœci}
+\subsection{Dostêpne funkcjonalnoœci dla zg³oszeñ..telefon}
+\subsection{Dostêpne funkcjonalnoœci dla zg³oszeñ..sms }
 
-    e_a/sin/ b = 6.3 d = 1.570796327
-    e_b/sin/ b = 6.3 d = 3.665191429
-    e_c/sin/ b = 6.3 d = -0.523598776
+\section{Przyk³ad dzia³ania aplikacji}
 
-    r_src_a 11 0 0 e = e_a(100pi*time)
-    r_src_b 12 0 0 e = e_b(100pi*time)
-    r_src_c 13 0 0 e = e_c(100pi*time)
+\section{Mo¿liwoœci rozwoju}
+\subsection{W jakim stopniu uda³o siê zrealizowaæ projekt wyspecyfikowany w za³o¿eniach}
+\subsection{Wnioski koñcowe}
 
-    l_1_a 11 21 8.69m
-    l_1_b 12 22 8.69m
-    l_1_c 13 23 8.69m
+\section{Podsumowanie}
 
-    c_1_a 21 0 3.24e-03u
-    c_1_b 22 0 3.24e-03u
-    c_1_c 23 0 3.24e-03u
-
-*time 0 20m
-
-*tr *matlab >
-     vr_src_a ir_zw_a vr_sw_max_a vr_sw_ster_a
-*run
-\end{lstlisting}
-}
