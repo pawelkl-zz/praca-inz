@@ -1,47 +1,53 @@
 \section{Wstêp}
-\suppressfloats[t]  %¿eby obiekt ruchomy (rysunek, tablica, itp.) nie pojawi³ siê u góry tej strony
+% \suppressfloats[t]  %¿eby obiekt ruchomy (rysunek, tablica, itp.) nie pojawi³ siê u góry tej strony
 
-Przyk³ady odnoœników. Odnoœnik do literatury~\cite{slepian}. 
-Drugi odnoœnik do literatury~\cite{bronsztejn}. 
-Kilka odnoœników do literatury~\cite{greenwood,feynman,fichtenholz,slepian}. 
-Wyjaœniono to na rys.~\ref{fig:rysunek}. 
-Równanie~opisuje jak¹œ zale¿noœæ. 
-Przyk³adowe parametry podano w~tab.~\ref{tab:przykladowa_tablica}. 
-Jakiœ adres internetowy:\url{http://www.ee.pw.edu.pl/~szewczyk/}.
+% \cite{slepian}. 
+% \ref{fig:rysunek}. 
+% \ref{tab:przykladowa_tablica}. 
 
-\begin{figure}[!tb]
-    \centering
-    \includegraphics[width=9.82cm]{rysunek.pdf}\\
-    \caption
-    %uwaga: w nawiasach [] nie mo¿e byæ odnoœnika do literatury, jeœli w dokumencie jest spis rysunków na pocz¹tku, a spis literatury jest w kolejnoœci cytowania (zmienia to numeracjê)
-    [Przyk³adowy rysunek z Excela. D³ugi tytu³ rysunku, ¿eby pokazaæ u³o¿enie tytu³u na stronie.]
-    {Przyk³adowy rysunek z Excela~\cite{bronsztejn}. D³ugi tytu³ rysunku, ¿eby pokazaæ u³o¿enie tytu³u na
-stronie.}
-    \label{fig:rysunek}
-\end{figure}
+% \begin{figure}[!tb]
+%     \centering
+%     \includegraphics[width=9.82cm]{rysunek.pdf}\\
+%     \caption
+%     %uwaga: w nawiasach [] nie mo¿e byæ odnoœnika do literatury, jeœli w dokumencie jest spis rysunków na pocz¹tku, a spis literatury jest w kolejnoœci cytowania (zmienia to numeracjê)
+%     [Przyk³adowy rysunek z Excela. D³ugi tytu³ rysunku, ¿eby pokazaæ u³o¿enie tytu³u na stronie.]
+%     {Przyk³adowy rysunek z Excela~\cite{bronsztejn}. D³ugi tytu³ rysunku, ¿eby pokazaæ u³o¿enie tytu³u na
+% stronie.}
+%     \label{fig:rysunek}
+% \end{figure}
 
 
-%ustawienia tablicy
-\setlength{\tabcolsep}{1.0em}
-\renewcommand{\arraystretch}{1.5}
+% %ustawienia tablicy
+% \setlength{\tabcolsep}{1.0em}
+% \renewcommand{\arraystretch}{1.5}
 
-\begin{tablica}
-    %uwaga: w nawiasach [] nie mo¿e byæ odnoœnika do literatury, jeœli w dokumencie jest spis rysunków na pocz¹tku, a spis literatury jest w kolejnoœci cytowania (zmienia to numeracjê)
-    {Przyk³adowa tablica.}
-    {Przyk³adowa tablica~\cite{slepian}.}
-    {
-    \begin{tabular}{|c|c|} \hline
-        $U_n$ & $I_{zw}$ \\ \hline
-        $kV$  & $\%$      \\ \hline
-        7.2 & 100 \\ \hline
-    \end{tabular}
-    }
-    \label{tab:przykladowa_tablica}
-\end{tablica}
+% \begin{tablica}
+%     %uwaga: w nawiasach [] nie mo¿e byæ odnoœnika do literatury, jeœli w dokumencie jest spis rysunków na pocz¹tku, a spis literatury jest w kolejnoœci cytowania (zmienia to numeracjê)
+%     {Przyk³adowa tablica.}
+%     {Przyk³adowa tablica~\cite{slepian}.}
+%     {
+%     \begin{tabular}{|c|c|} \hline
+%         $U_n$ & $I_{zw}$ \\ \hline
+%         $kV$  & $\%$      \\ \hline
+%         7.2 & 100 \\ \hline
+%     \end{tabular}
+%     }
+%     \label{tab:przykladowa_tablica}
+% \end{tablica}
+
+Zarz¹dzanie plikami sk³adowanymi na dyskach komputerów przy coraz bardziej postêpuj¹cym procesie przetwarzania tekstu, obrazu, dŸwiêku na zapis cyfrowym coraz trudniej jest nad¹¿yæ wszystko na bie¿¹co uspecyfikowaæ - ubraæ w odpowiedni¹ strukturê a priori, nie zawsze wychodzi. Budujemy coraz bardziej wyrafinowane struktury danych, które coraz trudniej jest porównaæ a co dopiero odpowiednio przypisaæ. Nasuwa siê te¿ pytanie jak odró¿niæ pliki które zosta³y wygenerowane przez u¿ytkownika a które s¹ jedynie kopi¹ danych œci¹gniêtych z internetu i ogólnie dostêpnych? Taka problematyka nastrêca problemów przy ocenie wa¿noœci dokumentów. U¿ytkownik powinien posiadaæ odpowiednie narzêdzie u³atwiaj¹ce pracê z jego plikami, pozwalaj¹c w miarê przystêpny sposób operowaæ na nich w bie¿¹cej pracy.
 
 
 \subsection{Cel i~zakres pracy}
 
+Celem pracy jest opracowanie i implementacja aplikacji usprawniaj¹cej zarz¹dzanie plikami. Najwa¿niejszymi cele szczegó³owe to:
+
+\begin{itemize}
+
+\item{Pozwolenie u¿ytkownikowi na wyszukiwanie plików po metadanych}
+\item{}
+
+\end{itemize}
 
 \subsection{Teza pracy}
 Tutaj teza pracy, jeœli trzeba...
@@ -68,16 +74,26 @@ Aplikacja powinna byæ w stanie znaleŸæ opisy do filmów aktualnie bêd¹cych w kina
 
 Do projektu u¿y³em obiektowej bazy danych MongoDB. W przeciwieñstwie do u¿ywania zwi¹zków w nazach relacyjncych nie musimy tworzyæ na sztywno zwi¹zków (nawet nie mamy standardowo takiej opcji), wszystkie operacje kojarzenia ze sob¹ encji musz¹ byæ definiowane w logice programu.
 
-\subsubsection{Ruby}
+Jêzyk zapytañ w MongoDB ró¿ni siê znacznie od tego do którego zostaliœmy przyzwyczajeni w przypadku relacyjnych baz danych. Nie u¿ywa on bowiem jêzyka SQL - co daje mu mo¿liwoœæ porzucenia pewnych intensywnie obci¹¿aj¹cych instrukcji takich jak np. JOIN. Zamiast tego pos³ugujemy siê jêzykiem JavaScript, który pierwotnie by³ wykorzystywany w programowaniu czêœci aplikacji w aplikacjach internetowych.
+
+\subsubsection{JRuby}
 
 Ruby jest obiektowym jêzykiem programowania trzeciej generacji. Swoj¹ sk³adniê wzoruje na Perlu, Smalltalku, Eiffel i Lispie\cite{wiki:ruby}. Moc jêzyka drzemie w uproszczonej sk³adni, porzucaj¹cej niektóre niepotrzebne znaki m.in. œrednika na koñcach instrukcji czy te¿ nawiasów, przy przekazywaniu parametrów do funkcji gdy podawany jest tylko jeden parametr. Wszystkie wprowadzone zabiegi maj¹ na celu zwiêkszenie czytelnoœci kodu.
 
-Od samych pocz¹tków jêzyk jest dostosowany do budowania aplikacji w paradygmacie \footnote[TDD]{TDD -- (Test Driven Development) proces wytwarzania oprogramowania opieraj¹cy siê na powtarzaniu krótkich cykli - tworzenia testu, zawaleniu go, napisaniu kawa³ku programu, przetestowaniu czy kod osi¹gn¹³ oczekiwany rezultat.}.
+Od samych pocz¹tków jêzyk jest dostosowany do budowania aplikacji w paradygmacie \footnote[1]{TDD -- (Test Driven Development) proces wytwarzania oprogramowania opieraj¹cy siê na powtarzaniu krótkich cykli - tworzenia testu, zawaleniu go, napisaniu kawa³ku programu, przetestowaniu czy kod osi¹gn¹³ oczekiwany rezultat.}.
+
+JRuby zaœ jest implementacj¹ jêzyka Ruby napisan¹ pod wirtualn¹ maszynê Javy. Zalet¹ takiego rozwi¹zania jest ¿e zamiast mo¿liwoœci u¿ycia jêzyka Ruby mo¿na zawrzeæ normalny kod Javy. Pozwala to na u¿ycie wielu bibliotek które mog¹ nie mieæ swojego odpowiednika w œwiecie referencyjnego interpretatora Rubiego.
 
 \subsection{Wykorzystane narzêdzia wspomagaj¹ce}
 \subsubsection{\LaTeX{}}
+
+Do sk³adania pracy zosta³ u¿yty jêzyk \LaTeX który wyewoluowa³ z jêzyka \TeX. S³u¿y on do definiowania ..
+
 \subsubsection{Git}
-Tutaj treœæ kolejnego podrozdzia³u.
+
+Pisz¹c jakikolwiek program potrzebuj¹cy nak³adów wiêkszej iloœci czasu i/lub ludzi pojawia siê potrzeba trzymania wersji wytwarzanego dobra - programu, dokumentacji czy te¿ specyfikacji. W³aœnie aby zapobiec zamro¿eniu wykonywania projektu ze wzglêdu na awariê systemu operacyjnego, pojedyncego pliku, noœnika danych albo nawet przypadkowym nadpisaniem przez programistê kodu jest mo¿liwoœæ przywrócenia kodu do poprzedniego (czyt. dzia³aj¹cego) stanu.
+
+Oczywiœcie przywracanie stanu daj¹ nam ró¿ne programy do tworzenia kopii zapasowych, wiêc co wiêcej daje nam GIT? Otó¿ jesteœmy w stanie scalaæ wyniki pracy wielu osób i rozwi¹zywaæ konflikty spowodowane zmiany jednego pliku przez kilka osób - przy czym rozwiazywanie konfliktów jest mo¿liwe do przeprowadzenia czêsto w sposób automatyczny.
 
 \section{Diagramy}
 \subsection{Diagramy klas}
