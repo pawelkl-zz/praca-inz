@@ -80,7 +80,7 @@
     %tre³ g³wna dokumentu
     \input{tresc_dokumentu.tex}
     \newpage
-    %koniec tre¿ci g³wnej dokumentu
+    %koniec tre¿ci g³ównej dokumentu
 
     %bibliografia
     %GATHER{bibliografia.bib}                       %polecenie programu WinEdt, w³¹cza plik do drzewa 'projektu'
@@ -92,7 +92,7 @@
     %spis rysunków i~tablic
     \input{spis_rysunkow.tex}
 
-    %za³czniki
+    %za³¹czniki
     \newpage
     \appendix
     \renewcommand{\appendixtocname}{Za³¹czniki}
@@ -103,13 +103,33 @@
     \input{zalacznik.tex}
     %koniec za³czniów
 
+    \renewcommand{\cftloftitlefont}{\Large\bfseries\sffamily}
+    % \listoffigures % wstaw coœ do listowania kodu
+    \addcontentsline{toc}{section}{Streszczenie}
+    
+    \renewcommand{\cftloftitlefont}{\Large\bfseries\sffamily}
+    % \listoffigures % wstaw coœ do listowania kodu
+    \addcontentsline{toc}{section}{S³owa kluczowe}
+    \newpage
+
     %skorowidz - nie u¿ywam
 %    \index{Napis}
 %    \index{Napis!Podnapis}
 %    \printindex
     %koniec skorowidza
 
+Oœwiadczam, ¿e niniejsz¹ pracê napisa³em samodzielnie, nie pos³uguj¹c siê niedozwolonymi 
+sposobami korzystania z cudzych opracowañ. Pozycje wymienione w Bibliografii 
+wykorzystywa³em, maj¹c do nich bezpoœredni dostêp. Jeœli korzysta³em ze Ÿróde³, z którymi 
+nie mia³em bezpoœredniego kontaktu, zaznacza³em to w tekœcie pracy. (-) Pawe³ K³osiewicz
+
+
+Oœwiadczenie
+Oœwiadczam niniejszym, ¿e przedk³adan¹ pracê in¿yniersk¹ napisa³em samodzielnie. Oznacza to, ¿e przy pisaniu pracy poza niezbêdnymi konsultacjami nie korzysta³em z pomocy innych osób, a w szczególnoœci nie zleca³em opracowania rozprawy innym osobom. Wszystkie dane, istotne myœli pochodz¹ z literatury i opatrzone s¹ odpowiednim przypisem. Jednoczeœnie Przyjmujê do wiadomoœci, ¿e gdyby powy¿sze oœwiadczenie okaza³o siê nieprawdziwe, decyzja o wydaniu dyplomu zostanie cofniêta.
+
+w³asnorêczny podpis
     %lista rzeczy do zrobienia: wypisuje na ko¿cu dokumentu, patrz: pakiet todo.sty
     \todos  
     %koniec listy rzeczy do zrobienia
+
 \end{document}
