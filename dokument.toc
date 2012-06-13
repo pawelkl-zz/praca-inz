@@ -1,0 +1,38 @@
+\select@language {polish}
+\contentsline {section}{Wykaz wa\.zniejszych skr\'ot\'ow i~oznacze\'n}{1}{Doc-Start}
+\contentsline {section}{\numberline {1}Wst\k ep}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Cel i~zakres pracy}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Teza pracy}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Specyfikacja wymaga\'n}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Wymagania funkcjonalne}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Wymagania niefunkcjonalne}{3}{subsection.2.2}
+\contentsline {section}{\numberline {3}(1)state-of-art - realia obszaru badawczego}{3}{section.3}
+\contentsline {section}{\numberline {4}(2)w\IeC {\l }asne propozycje rozwi\k aza\'n}{3}{section.4}
+\contentsline {section}{\numberline {5}(3)eksperymenty z wynikami - czy te\.z przedstawienie analizy}{3}{section.5}
+\contentsline {section}{\numberline {6}Wykorzystane technologie}{3}{section.6}
+\contentsline {subsection}{\numberline {6.1}Zastosowane j\k ezyki i technologie}{3}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}MongoDB}{3}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}JRuby}{3}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}Wykorzystane narz\k edzia wspomagaj\k ace}{4}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}\textlatin {\LaTeX }{}}{4}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Git}{4}{subsubsection.6.2.2}
+\contentsline {section}{\numberline {7}Diagramy}{5}{section.7}
+\contentsline {subsection}{\numberline {7.1}Diagramy klas}{5}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Diagramy sekwencji}{5}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Diagramy przypadk\'ow}{5}{subsection.7.3}
+\contentsline {section}{\numberline {8}Opis funkcjonalno\'sci}{5}{section.8}
+\contentsline {subsection}{\numberline {8.1}Dost\k epne funkcjonalno\'sci dla zg\IeC {\l }osze\'n..telefon}{5}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Dost\k epne funkcjonalno\'sci dla zg\IeC {\l }osze\'n..sms }{5}{subsection.8.2}
+\contentsline {section}{\numberline {9}Przyk\IeC {\l }ad dzia\IeC {\l }ania aplikacji}{5}{section.9}
+\contentsline {section}{\numberline {10}Zako\'nczenie}{5}{section.10}
+\contentsline {section}{Literatura}{6}{section.10}
+\contentsline {section}{Spis tabel}{7}{section.10}
+\contentsline {section}{Spis schemat\'ow}{8}{section.10}
+\contentsline {section}{Spis fragment\'ow kod\'ow \'zr\'od\IeC {\l }owych program\'ow komputerowych}{9}{section.10}
+\contentsline {section}{Za\IeC {\l }\k aczniki}{9}{section*.1}
+\contentsline {section}{\numberline {A}Kod \'zr\'od\IeC {\l }owy}{10}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}JRuby}{10}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}MongoDB}{10}{subsection.A.2}
+\contentsline {section}{\numberline {B}else ??}{10}{appendix.B}
+\contentsline {section}{Streszczenie}{10}{appendix.B}
+\contentsline {section}{S\IeC {\l }owa kluczowe}{10}{appendix.B}
