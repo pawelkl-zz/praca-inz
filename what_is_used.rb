@@ -36,3 +36,8 @@ CLI
 # -cookiefile=[CFILE]
 # -cred=[USERPASS]
 
+CURL
+
+-b --cookie cookies or cookiefile
+-c --cookie-jar - write cookies to this file
+-d --data http post data

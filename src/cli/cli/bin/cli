@@ -22,7 +22,7 @@ program_desc 'AutoFileManager'
 version Cli::VERSION
 
 # [URL]
-# [REFERER]
+# [REFE RER]
 # [COOKIE] just cookie
 # [FNAME] suggested file name
 # [POST] post data
@@ -49,7 +49,7 @@ switch [:s,:switch]
 
 desc 'Describe some flag here'
 default_value 'the default'
-arg_name 'The name of the argument'
+arg_name 'The name of the arguments'
 flag [:f,:flagname]
 
 desc 'Describe list here'
