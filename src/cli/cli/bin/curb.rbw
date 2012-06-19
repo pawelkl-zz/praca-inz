@@ -22,7 +22,6 @@ parsed from the command-line by
 OptionParser.
 =end
 
-
 options = {}
 
 optparse = OptionParser.new do|opts|
@@ -43,6 +42,7 @@ optparse = OptionParser.new do|opts|
     options[:cookie] = c
   end
 
+=begin
   options[:user] = ""
     opts.on( '-l', '--user USER', "" ) do|c|
     options[:user] = c
@@ -52,10 +52,21 @@ optparse = OptionParser.new do|opts|
     opts.on( '-p', '--pass PASSWORD', "" ) do|c|
     options[:pass] = c
   end
+=end
+
+  options[:cred] = ""
+    opts.on( '-d', '--cred USER:PASSWORD', "" ) do|c|
+    options[:cred] = c
+  end
 
   options[:ref] = ""
     opts.on( '-r', '--ref REF-LINK', "" ) do|c|
     options[:ref] = c
+  end
+
+  options[:file] = ""
+    opts.on( '-f', '--file FILE', "" ) do|c|
+    options[:file] = c
   end
 
 end
@@ -142,10 +153,10 @@ class Downloader
     @c.header_in_body = false
   end
 
-  def link_setup(user,pass,ref,cookie)
-    @c.username = user
-    @c.password = pass
-    # @c.userpwd = user:password
+  def link_setup(cred,ref,cookie)
+    # @c.username = user
+    # @c.password = pass
+    @c.userpwd = cred
     @c.autoreferer=true
     @c.connect_timeout=15
     @c.cookiefile = cookie
@@ -184,20 +195,13 @@ class Downloader
     print @myjson
   end
 
-  def add_link(url,user=nil,pass=nil,ref=nil,cookie=nil)
-    link_setup(user,pass,ref,cookie)
-    parse_link_info
-    @c.perform
-    # puts @c.username
-  end
-
-  def add_links(url_array,user=nil,pass=nil,ref=nil,cookie=nil)
-    link_setup(user,pass,ref,cookie)
+  def add_links(url_array,cred=nil,ref=nil,cookie=nil)
+    link_setup(cred,ref,cookie)
     url_array.each do |single_url|
       @c.url=single_url
       @filename = single_url.split(/\?/).first.split(/\//).last
       puts @filename
-      @save_location = @target_dir + '\\' + @filename
+      @save_location = @target_dir + '\\' + (options[:file].nil? ? @filename : options[:file])
       @c.perform
       File.open(@save_location,"wb").write @c.body_str
       # if File.file?(@save_location)
