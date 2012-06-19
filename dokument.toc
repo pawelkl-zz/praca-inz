@@ -6,10 +6,10 @@
 \contentsline {section}{\numberline {2}Specyfikacja wymaga\'n}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Wymagania funkcjonalne}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Wymagania niefunkcjonalne}{3}{subsection.2.2}
-\contentsline {section}{\numberline {3}(1)state-of-art - realia obszaru badawczego}{3}{section.3}
-\contentsline {section}{\numberline {4}(2)w\IeC {\l }asne propozycje rozwi\k aza\'n}{3}{section.4}
+\contentsline {section}{\numberline {3}( 1 ) state-of-art - realia obszaru badawczego}{3}{section.3}
+\contentsline {section}{\numberline {4}( 2 ) w\IeC {\l }asne propozycje rozwi\k aza\'n}{3}{section.4}
 \contentsline {subsection}{\numberline {4.1}2}{3}{subsection.4.1}
-\contentsline {section}{\numberline {5}(3)eksperymenty z wynikami - czy te\.z przedstawienie analizy}{3}{section.5}
+\contentsline {section}{\numberline {5}( 3 ) eksperymenty z wynikami - czy te\.z przedstawienie analizy}{3}{section.5}
 \contentsline {section}{\numberline {6}Wykorzystane technologie}{3}{section.6}
 \contentsline {subsection}{\numberline {6.1}Zastosowane j\k ezyki i technologie}{3}{subsection.6.1}
 \contentsline {subsubsection}{\numberline {6.1.1}MongoDB}{3}{subsubsection.6.1.1}
