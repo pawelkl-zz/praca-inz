@@ -26,7 +26,7 @@ urls_to_download = [
 ]
 
 class Downloader
-  def initialiez(directory)
+  def initialize(directory)
     @PASS=nil
     @COOKIE=nil
     @filename=nil
