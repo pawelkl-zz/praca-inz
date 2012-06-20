@@ -6,6 +6,7 @@ require 'json'
 require 'digest/md5'
 # load 'moviehasher.rb'
 load 'c:\dropbox\#code\praca-inz\src\moviehasher.rb'
+load 'c:\dropbox\#code\praca-inz\src\AccessDb.rb'
 
 require 'wx'
 include Wx
@@ -109,6 +110,7 @@ class Downloader
     File.exists? @target_dir # File.directory? @target_dir
     @c = Curl::Easy.new
     curl_setup
+    AccessDb.connect
   end
 
   def curl_setup

@@ -3,27 +3,27 @@ require 'mongo'
 require 'json'
 
 module AccessDb
-	def setup
+	def AccessDb.setup
 		@db = Connection.new.db('meta-files');
 		setup_collections
 	end
-	def connect
+	def AccessDb.connect
 		@db = Mongo::Connection.new.db('meta',
 			:pool_size => 5, :timeout => 5)
 	end
-	def setup_collections
+	def AccessDb.setup_collections
 		@meta = db.collection('meta')
 	end
-	def insert meta
+	def AccessDb.insert meta
 		@meta.insert(meta)
 	end
-	def update id, meta
+	def AccessDb.update id, meta
 		@meta.update({ :_id => id }, meta)
 	end
-	def delete id
+	def AccessDb.delete id
 		@meta.remove({ :_id => id})
 	end
-	def add id, param, value
+	def AccessDb.add id, param, value
 		@meta.update({ :_id => id }, '$set' => { param => value })
 	end
 end
