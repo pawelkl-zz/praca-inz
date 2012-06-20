@@ -1,3 +1,4 @@
+manager = Downloader.new options[:destination]
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'curb'
