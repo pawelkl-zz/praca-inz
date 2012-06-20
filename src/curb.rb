@@ -1,9 +1,11 @@
+manager = Downloader.new options[:destination]
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'curb'
 require 'yaml'
 require 'json'
 require 'digest/md5'
+# load 'moviehasher.rb'
 load 'c:\dropbox\#code\praca-inz\src\moviehasher.rb'
 
 require 'wx'
@@ -127,30 +129,36 @@ class Downloader
     # @c.cookies=COOKIES # NAME=CONTENTS;
   end
 
-  def parse_link_info(link)
-    data  =  {}
+  def parse_link_info(url)
+    data, link, content, hash  =  {}, {}, {}, {}
 
-    data["requested-link"] = link
-    if @c.last_effective_url != link
-      then data["final-link"] = @c.last_effective_url end
+    link["requested"] = url
+    if @c.last_effective_url != url
+      then link["final"] = @c.last_effective_url end
 
-    data["requested-filename"] = @filename
+    link["requested-filename"] = @filename
     @final_filename = @c.last_effective_url.split(/\?/).first.split(/\//).last
     if @final_filename != @filename
-      then data["final-filename"] = @final_filename end
+      then link["final-filename"] = @final_filename end
 
-    data["content-lenght"] = @c.downloaded_content_length
-    data["content-type"] = @c.content_type
+    data["Link"] = link
+
+    content["lenght"] = @c.downloaded_content_length
+    content["type"] = @c.content_type
+    data["Content"] = content
+
     data["filetime"] = Time.at(@c.file_time).utc.to_s
 
     @hash = MovieHasher::compute_hash(@save_location)
     @hash = MovieHasher::compute_hash(@save_location)
 
     if !@hash.nil?
-      then data["bigfile-hash"] = @hash end
+      then hash["bigfile"] = @hash end
 
-    @md5 = Digest::MD5.hexdigest(@save_location)
-    data["md5"] = @md5
+    @md5 = Digest::MD5.hexdigest(File.read(@save_location))
+    hash["md5"] = @md5
+
+    data["Hashes"] = hash
 
     @myjson = JSON.pretty_generate(data)
     print @myjson
@@ -206,4 +214,4 @@ end
   stream_text = open('file.txt:stream1').read
 =end
 
-sleep(15)
+sleep(3)
