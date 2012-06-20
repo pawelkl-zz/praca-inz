@@ -1,4 +1,3 @@
-manager = Downloader.new options[:destination]
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'curb'
@@ -38,7 +37,7 @@ optparse = OptionParser.new do|opts|
   end
 
   options[:cred] = ""
-    opts.on( '-d', '--cred USER:PASSWORD', "" ) do|c|
+    opts.on( '-t', '--cred USER:PASSWORD', "" ) do|c|
     options[:cred] = c
   end
 
@@ -50,6 +49,11 @@ optparse = OptionParser.new do|opts|
   options[:file] = ""
     opts.on( '-f', '--file FILE', "" ) do|c|
     options[:file] = c
+  end
+
+  options[:destination] = ""
+    opts.on( '-d', '--destination DESTINATION-FOLDER', "" ) do|c|
+    options[:destination] = c
   end
 end
 
@@ -197,10 +201,10 @@ class Downloader
   end
 end
 
-manager = Downloader.new 'c:\temp'
+manager = Downloader.new options[:destination]
 # manager.add_links(urls_to_download)
 
-if ARGV.nil?
+if ARGV.nil? 
   manager.add_link(options[:url])
 else
   manager.add_links(ARGV)
