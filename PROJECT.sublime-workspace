@@ -3,6 +3,10 @@
 	{
 		"selected_items":
 		[
+			[
+				"all",
+				"all_digest"
+			]
 		]
 	},
 	"buffers":
@@ -20,7 +24,7 @@
 			"file": "src/cli/cli/bin/moviehasher.rb",
 			"settings":
 			{
-				"buffer_size": 1212,
+				"buffer_size": 0,
 				"line_ending": "Windows",
 				"name": "module MovieHasher"
 			}
@@ -50,11 +54,29 @@
 			}
 		},
 		{
-			"file": "src/cli/cli/bin/curb.rbw",
+			"file": "src/curb.rb",
 			"settings":
 			{
-				"buffer_size": 5502,
+				"buffer_size": 6048,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/curb.rbw",
+			"settings":
+			{
+				"buffer_size": 6001,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "--- C:\\Dropbox\\#code\\praca-inz\\src\\curb.rbw Wed Jun 20 03:21:16 2012\n+++ C:\\Dropbox\\#code\\praca-inz\\src\\curb.rb Wed Jun 20 02:38:57 2012\n@@ -4,7 +4,7 @@\n require 'yaml'\n require 'json'\n require 'digest/md5'\n-load 'moviehasher.rb'\n+load 'c:\\dropbox\\#code\\praca-inz\\src\\moviehasher.rb'\n \n require 'wx'\n require 'rubygems'\n@@ -127,36 +127,30 @@\n     # @c.cookies=COOKIES # NAME=CONTENTS;\n   end\n \n-  def parse_link_info(url)\n-    data, link, content, hash  =  {}, {}, {}, {}\n-\n-    link[\"requested\"] = url\n-    if @c.last_effective_url != url\n-      then link[\"final\"] = @c.last_effective_url end\n-\n-    link[\"requested-filename\"] = @filename\n+  def parse_link_info(link)\n+    data  =  {}\n+\n+    data[\"requested-link\"] = link\n+    if @c.last_effective_url != link\n+      then data[\"final-link\"] = @c.last_effective_url end\n+\n+    data[\"requested-filename\"] = @filename\n     @final_filename = @c.last_effective_url.split(/\\?/).first.split(/\\//).last\n     if @final_filename != @filename\n-      then link[\"final-filename\"] = @final_filename end\n-\n-    data[\"Link\"] = link\n-\n-    content[\"lenght\"] = @c.downloaded_content_length\n-    content[\"type\"] = @c.content_type\n-    data[\"Content\"] = content\n-\n+      then data[\"final-filename\"] = @final_filename end\n+\n+    data[\"content-lenght\"] = @c.downloaded_content_length\n+    data[\"content-type\"] = @c.content_type\n     data[\"filetime\"] = Time.at(@c.file_time).utc.to_s\n \n     @hash = MovieHasher::compute_hash(@save_location)\n     @hash = MovieHasher::compute_hash(@save_location)\n \n     if !@hash.nil?\n-      then hash[\"bigfile\"] = @hash end\n-\n-    @md5 = Digest::MD5.hexdigest(File.read(@save_location))\n-    hash[\"md5\"] = @md5\n-\n-    data[\"Hashes\"] = hash\n+      then data[\"bigfile-hash\"] = @hash end\n+\n+    @md5 = Digest::MD5.hexdigest(@save_location)\n+    data[\"md5\"] = @md5\n \n     @myjson = JSON.pretty_generate(data)\n     print @myjson\n@@ -210,4 +204,6 @@\n   end\n \n   stream_text = open('file.txt:stream1').read\n-=end+=end\n+\n+sleep(15)",
+			"settings":
+			{
+				"buffer_size": 2050,
+				"line_ending": "Windows",
+				"name": "curb.rbw -> curb.rb",
+				"scratch": true
 			}
 		}
 	],
@@ -69,8 +91,36 @@
 				"Git: Gui"
 			],
 			[
+				"git pull",
+				"Git: Pull Current Branch"
+			],
+			[
 				"git add",
 				"Git: Add Current File"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git q",
+				"Git: Quick Commit"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"prefer",
+				"Preferences: Settings - User"
 			],
 			[
 				"preferences ",
@@ -133,10 +183,6 @@
 				"Git: Push Current Branch"
 			],
 			[
-				"git push",
-				"Git: Push Current Branch"
-			],
-			[
 				"comment",
 				"Toggle Block Comment"
 			],
@@ -193,10 +239,6 @@
 				"Git: Commit"
 			],
 			[
-				"git commit",
-				"Git: Commit"
-			],
-			[
 				"tra",
 				"Trailing Spaces: Delete Trailing Spaces"
 			],
@@ -223,10 +265,6 @@
 			[
 				"pdf",
 				"LaTeXTools: Toggle focus (PDF/editor)"
-			],
-			[
-				"trai",
-				"Trailing Spaces: Delete Trailing Spaces"
 			],
 			[
 				"taili",
@@ -389,10 +427,6 @@
 				"View: Toggle Console"
 			],
 			[
-				"prefer",
-				"Preferences: Settings - User"
-			],
-			[
 				"latex ",
 				"LaTeXTools: Toggle focus (PDF/editor)"
 			],
@@ -454,9 +488,15 @@
 	},
 	"file_history":
 	[
-		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/User/Preferences.sublime-settings",
-		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Default/Preferences.sublime-settings",
+		"/C/Dropbox/#code/praca-inz/src/COMMIT_EDITMSG",
+		"/C/Temp/Thumbs.db_encryptable.txt",
+		"/C/Temp/i-marilyn-zakolanowki-zazu-749.jpg_meta.json.txt",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/User/Preferences.sublime-settings",
+		"/c/users/lenovo/appdata/local/temp/tmpou281m.rbw",
+		"/C/Dropbox/#code/praca-inz/src/cli/cli/bin/curb.rbw",
+		"/C/Dropbox/#code/praca-inz/src/file.txt",
+		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Default/Preferences.sublime-settings",
 		"/C/Dropbox/#code/praca-inz/src/cli/cli/bin/curb.rb-run.lnk",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Color Scheme - Default/Monokai.tmTheme",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/User/JSON.sublime-settings",
@@ -575,9 +615,7 @@
 		"/C/SkyDrive/Dokumenty/sample-new/preambula_pakiety.tex",
 		"/C/SkyDrive/Dokumenty/sample-new/zalacznik.tex",
 		"/C/SkyDrive/Dokumenty/sample-new/strona_tytulowa.sty",
-		"/C/Dropbox/#learn/#self/romannumeric.rb",
-		"/C/Dropbox/#learn/#self/moviehasher.rb",
-		"/C/SkyDrive/Dokumenty/tomek-malolepszy.txt"
+		"/C/Dropbox/#learn/#self/romannumeric.rb"
 	],
 	"find":
 	{
@@ -585,7 +623,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 88.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\Dropbox\\#code\\praca-inz",
@@ -598,6 +636,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"data",
+			"link",
+			"all_digest",
+			"url_array",
 			"rbw",
 			"rb",
 			"#",
@@ -721,11 +763,7 @@
 			"red",
 			"table",
 			"center",
-			"} %{",
-			"¹",
-			"æ",
-			"ê",
-			"³"
+			"} %{"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -768,14 +806,14 @@
 						"selection":
 						[
 							[
-								225,
-								225
+								592,
+								592
 							]
 						],
 						"settings":
 						{
 							"auto_name": "what_is_used",
-							"function_name_status_row": 10,
+							"function_name_status_row": 21,
 							"spell_check": false,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
@@ -790,7 +828,7 @@
 					"file": "src/cli/cli/bin/moviehasher.rb",
 					"settings":
 					{
-						"buffer_size": 1212,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -908,27 +946,81 @@
 				},
 				{
 					"buffer": 5,
-					"file": "src/cli/cli/bin/curb.rbw",
+					"file": "src/curb.rb",
 					"settings":
 					{
-						"buffer_size": 5502,
+						"buffer_size": 6048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5380,
-								5380
+								311,
+								311
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 217,
-							"spell_check": false,
+							"function_name_status_row": 17,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/curb.rbw",
+					"settings":
+					{
+						"buffer_size": 6001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								6001
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3332.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"settings":
+					{
+						"buffer_size": 2050,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								234
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 7,
+							"syntax": "Packages/Diff/Diff.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -982,10 +1074,6 @@
 		"height": 182.0
 	},
 	"output.git":
-	{
-		"height": 98.0
-	},
-	"output.tests":
 	{
 		"height": 98.0
 	},
