@@ -200,7 +200,7 @@ end
 manager = Downloader.new 'c:\temp'
 # manager.add_links(urls_to_download)
 
-if ARGV.nil? 
+if ARGV.nil?
   manager.add_link(options[:url])
 else
   manager.add_links(ARGV)
