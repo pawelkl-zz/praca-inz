@@ -8,7 +8,6 @@ require 'digest/md5'
 load 'c:\dropbox\#code\praca-inz\src\moviehasher.rb'
 
 require 'wx'
-require 'rubygems'
 include Wx
 
 require 'optparse'
