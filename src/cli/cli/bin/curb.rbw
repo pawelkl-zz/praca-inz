@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'curb'
-# require 'addressable/uri'
-# require 'net/http'
 require 'yaml'
 require 'json'
 load 'moviehasher.rb'

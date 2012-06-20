@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/Dropbox/#code/praca-inz",
+			"folder_exclude_patterns": ["images"],
+			"file_exclude_patterns": ["*.pdf,*.gz"]
+		}
+	]
+}

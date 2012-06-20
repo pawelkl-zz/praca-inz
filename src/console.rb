@@ -13,6 +13,7 @@ bar = ProgressBar.new
 rows= []
 rows <<  ['first file','15MB']
 rows <<  ['second file','15MB']
+rows << ['third','100MB']
 table =  Terminal::Table.new :rows=>rows
 100.times do
   sleep 0.1
