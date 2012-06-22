@@ -1,5 +1,18 @@
+todo:
+
+Modu³ 1 - downloader
+
+Modu³ 2 - auto parser
+- dodaæ folder automatycznego skanowania dla importu
+- 
+
+Modu³ 3 - manual parser
+
+Modu³ 4 - map/reduce
+
 curl
 ruby
+mongo
 
 # thor - cli ruby framework
 gli # :)
