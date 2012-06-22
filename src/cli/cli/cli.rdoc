@@ -1,5 +1,0 @@
-= cli
-
-Generate this with
-    cli rdoc
-After you have described your command line interface

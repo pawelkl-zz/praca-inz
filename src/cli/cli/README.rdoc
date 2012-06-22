@@ -1,6 +1,0 @@
-= cli
-
-Describe your project here
-
-:include:cli.rdoc
-
