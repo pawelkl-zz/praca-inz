@@ -1,1 +1,28 @@
 Praca in¿ynierska na kierunku Informatyka.
+
+Needed programs:
+
+miktex-portable (just to compile latex)
+set PATH="C:\Program Files\MiKTeX\miktex\bin;";%PATH%
+
+sumatraPDF
+set PATH="C:\Dropbox\#code\sumatrapdf";%PATH%
+
+[ http://jbdeaton.com/2012/pdf-syncing-in-sublime-text-for-latex-on-windows/ ]
+
+sumatrapdf settings
+"C:\Program Files\Sublime Text 2\sublime_text.exe" "%f:%l"`
+
+Git for windows
+[ http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.11-preview20120620.exe&can=2&q=full+installer+official+git ]
+
+Github
+[ http://github-windows.s3.amazonaws.com/GitHubSetup.exe ]
+
+Ruby
+[ http://rubyinstaller.org/news/2012/04/21/rubyinstaller-1-9-3-p194-released/ ]
+
+[ http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe ]
+
+MongoDb
+[link ?]

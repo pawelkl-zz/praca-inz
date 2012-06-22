@@ -15,26 +15,26 @@
 			"file": "what_is_used.rb",
 			"settings":
 			{
-				"buffer_size": 995,
+				"buffer_size": 1156,
 				"line_ending": "Windows",
 				"name": "what_is_used"
-			}
-		},
-		{
-			"file": "src/cli/cli/bin/moviehasher.rb",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "module MovieHasher"
 			}
 		},
 		{
 			"file": "dokument.tex",
 			"settings":
 			{
-				"buffer_size": 5161,
+				"buffer_size": 5166,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "setup.txt",
+			"settings":
+			{
+				"buffer_size": 701,
+				"line_ending": "Windows",
+				"name": "miktex-portable:"
 			}
 		},
 		{
@@ -46,37 +46,61 @@
 			}
 		},
 		{
-			"file": "/C/Dropbox/todo.txt",
+			"file": "src/Downloader.rbw",
 			"settings":
 			{
-				"buffer_size": 169,
+				"buffer_size": 6252,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/curb.rb",
+			"file": "src/moviehasher.rb",
 			"settings":
 			{
-				"buffer_size": 6048,
+				"buffer_size": 1212,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/curb.rbw",
+			"file": "preambula_pakiety.tex",
 			"settings":
 			{
-				"buffer_size": 6001,
+				"buffer_size": 4843,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "--- C:\\Dropbox\\#code\\praca-inz\\src\\curb.rbw Wed Jun 20 03:21:16 2012\n+++ C:\\Dropbox\\#code\\praca-inz\\src\\curb.rb Wed Jun 20 02:38:57 2012\n@@ -4,7 +4,7 @@\n require 'yaml'\n require 'json'\n require 'digest/md5'\n-load 'moviehasher.rb'\n+load 'c:\\dropbox\\#code\\praca-inz\\src\\moviehasher.rb'\n \n require 'wx'\n require 'rubygems'\n@@ -127,36 +127,30 @@\n     # @c.cookies=COOKIES # NAME=CONTENTS;\n   end\n \n-  def parse_link_info(url)\n-    data, link, content, hash  =  {}, {}, {}, {}\n-\n-    link[\"requested\"] = url\n-    if @c.last_effective_url != url\n-      then link[\"final\"] = @c.last_effective_url end\n-\n-    link[\"requested-filename\"] = @filename\n+  def parse_link_info(link)\n+    data  =  {}\n+\n+    data[\"requested-link\"] = link\n+    if @c.last_effective_url != link\n+      then data[\"final-link\"] = @c.last_effective_url end\n+\n+    data[\"requested-filename\"] = @filename\n     @final_filename = @c.last_effective_url.split(/\\?/).first.split(/\\//).last\n     if @final_filename != @filename\n-      then link[\"final-filename\"] = @final_filename end\n-\n-    data[\"Link\"] = link\n-\n-    content[\"lenght\"] = @c.downloaded_content_length\n-    content[\"type\"] = @c.content_type\n-    data[\"Content\"] = content\n-\n+      then data[\"final-filename\"] = @final_filename end\n+\n+    data[\"content-lenght\"] = @c.downloaded_content_length\n+    data[\"content-type\"] = @c.content_type\n     data[\"filetime\"] = Time.at(@c.file_time).utc.to_s\n \n     @hash = MovieHasher::compute_hash(@save_location)\n     @hash = MovieHasher::compute_hash(@save_location)\n \n     if !@hash.nil?\n-      then hash[\"bigfile\"] = @hash end\n-\n-    @md5 = Digest::MD5.hexdigest(File.read(@save_location))\n-    hash[\"md5\"] = @md5\n-\n-    data[\"Hashes\"] = hash\n+      then data[\"bigfile-hash\"] = @hash end\n+\n+    @md5 = Digest::MD5.hexdigest(@save_location)\n+    data[\"md5\"] = @md5\n \n     @myjson = JSON.pretty_generate(data)\n     print @myjson\n@@ -210,4 +204,6 @@\n   end\n \n   stream_text = open('file.txt:stream1').read\n-=end+=end\n+\n+sleep(15)",
+			"file": "src/AccessDb.rb",
 			"settings":
 			{
-				"buffer_size": 2050,
+				"buffer_size": 1188,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Etl.rb",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/MapReduce.rb",
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Windows",
-				"name": "curb.rbw -> curb.rb",
-				"scratch": true
+				"name": "mapreduce.rb"
+			}
+		},
+		{
+			"file": "/C/#iso/win8-rp-key.txt",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows",
+				"name": "TK8TP-9JN6P-7X7WW-RFFTV-B7QPF"
 			}
 		}
 	],
@@ -91,12 +115,96 @@
 				"Git: Gui"
 			],
 			[
-				"git pull",
-				"Git: Pull Current Branch"
+				"lat ",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"la pdf",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"lat pd",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"GIT GUI",
+				"Git: Gui"
+			],
+			[
+				"late p",
+				"LaTeXTools: View PDF"
 			],
 			[
 				"git add",
 				"Git: Add Current File"
+			],
+			[
+				"lat pdf",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"latex pdf",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"pdf ",
+				"LaTeXTools: Toggle focus (PDF/editor)"
+			],
+			[
+				"late pdf",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"latex",
+				"LaTeXTools: View PDF"
+			],
+			[
+				"git qu",
+				"Git: Quick Commit"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"traili",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"git pull",
+				"Git: Pull Current Branch"
 			],
 			[
 				"git push",
@@ -109,10 +217,6 @@
 			[
 				"git commit",
 				"Git: Commit"
-			],
-			[
-				"trai",
-				"Trailing Spaces: Delete Trailing Spaces"
 			],
 			[
 				"key",
@@ -133,10 +237,6 @@
 			[
 				"preferences user",
 				"Preferences: Settings - User"
-			],
-			[
-				"add",
-				"Git: Add Current File"
 			],
 			[
 				"user",
@@ -171,10 +271,6 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"git qu",
-				"Git: Quick Commit"
-			],
-			[
 				"git comm",
 				"Git: Quick Commit"
 			],
@@ -187,10 +283,6 @@
 				"Toggle Block Comment"
 			],
 			[
-				"trail",
-				"Trailing Spaces: Delete Trailing Spaces"
-			],
-			[
 				"spell",
 				"Preferences: Package Control Settings – Default"
 			],
@@ -201,14 +293,6 @@
 			[
 				"spell c",
 				"Spell Check: Next Misspelling"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"traili",
-				"Trailing Spaces: Delete Trailing Spaces"
 			],
 			[
 				"commit",
@@ -227,24 +311,12 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"install ",
 				"Package Control: Install Package"
 			],
 			[
 				"commi",
 				"Git: Commit"
-			],
-			[
-				"tra",
-				"Trailing Spaces: Delete Trailing Spaces"
-			],
-			[
-				"xml",
-				"Set Syntax: XML"
 			],
 			[
 				"package remov",
@@ -257,10 +329,6 @@
 			[
 				"reindent",
 				"Indentation: Reindent Lines"
-			],
-			[
-				"indent",
-				"Indentation: Guess Settings From Buffer"
 			],
 			[
 				"pdf",
@@ -387,10 +455,6 @@
 				"Snippet: #!/usr/bin/env ruby -wKU"
 			],
 			[
-				"ruby",
-				"BeautifyRuby"
-			],
-			[
 				"b",
 				"BeautifyRuby"
 			],
@@ -431,10 +495,6 @@
 				"LaTeXTools: Toggle focus (PDF/editor)"
 			],
 			[
-				"latex",
-				"LaTeXTools: View PDF"
-			],
-			[
 				"lorem",
 				"Snippet: Lorem ipsum"
 			],
@@ -471,7 +531,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 418.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -488,6 +548,37 @@
 	},
 	"file_history":
 	[
+		"/c/users/pawe~1/appdata/local/temp/tmpuvernz.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmputlfbx.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmp4_hewm.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmp9apovc.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpnmy0ov.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpgz9io1.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpr1wk5m.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmptsqslh.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpv4vkne.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmphc6txs.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmprcamts.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpbd6hta.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmp2eqb43.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpolgri5.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpm0ijfr.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpy9okw8.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmp1qnqxz.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmpphyfzw.tex",
+		"/c/users/pawe~1/appdata/local/temp/tmp9cg8is.tex",
+		"/C/Ruby193/lib/ruby/1.9.1/rubygems/defaults.rb",
+		"/c/users/pawe~1/appdata/local/temp/tmptp44cy.rbw",
+		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/LaTeXTools/LaTeX.sublime-build",
+		"/C/Dropbox/todo.txt",
+		"/C/Dropbox/#code/praca-inz/src/MovieHasher.rb",
+		"/C/Dropbox/#code/praca-inz/src/moviehasher.rb",
+		"/C/Dropbox/#code/praca-inz/src/cli/cli/bin/moviehasher.rb",
+		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Color Scheme - Default/Monokai.tmTheme",
+		"/C/Downloads/Windows8-ReleasePreview-64bit-English.eh",
+		"/C/Dropbox/#code/praca-inz/src/sample/uri-simple-http-download.rb",
+		"/C/#music/Pendulum/In_Silico-2008-DV8/00-pendulum-in_silico-2008.sfv",
+		"/C/Users/lenovo/Downloads/no name (1).gpx",
 		"/C/Dropbox/#code/praca-inz/src/COMMIT_EDITMSG",
 		"/C/Temp/Thumbs.db_encryptable.txt",
 		"/C/Temp/i-marilyn-zakolanowki-zazu-749.jpg_meta.json.txt",
@@ -498,7 +589,6 @@
 		"/C/Dropbox/#code/praca-inz/src/file.txt",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Default/Preferences.sublime-settings",
 		"/C/Dropbox/#code/praca-inz/src/cli/cli/bin/curb.rb-run.lnk",
-		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Color Scheme - Default/Monokai.tmTheme",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/User/JSON.sublime-settings",
 		"/C/Dropbox/#soft/#ide/sublime/Data/Packages/Package Control/Package Control.sublime-settings",
 		"/C/Dropbox/#code/praca-inz/src/cli/cli/bin/curb.rb",
@@ -585,37 +675,7 @@
 		"/C/Dropbox/#code/cv.tex",
 		"/C/Dropbox/#soft/#ide/Data/Packages/Default/Preferences.sublime-settings",
 		"/C/texlive/2011/texmf-dist/doc/latex/invoice/00README.tex",
-		"/C/Dropbox/#soft/#ide/Data/Packages/User/Ruby.sublime-settings",
-		"/C/Dropbox/#soft/#ide/Data/Packages/User/Distraction Free.sublime-settings",
-		"/C/Dropbox/#code/praca-inz/wykaz_skrotow.tex",
-		"/C/SkyDrive/Dokumenty/sample/wykaz_skrotow.tex",
-		"/C/SkyDrive/Dokumenty/sample/zalacznik.tex",
-		"/C/texlive/2011/texmf-dist/doc/latex/europecv/europecv.tex",
-		"/C/texlive/2011/texmf-dist/doc/latex/simplecv/testcv.tex",
-		"/C/dropbox/#code/praca-inz/spis_rysunkow.tex",
-		"/C/dropbox/#code/praca-inz/dokument.aux",
-		"/C/Dropbox/#soft/#ide/Data/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/Dropbox/#soft/#ide/Data/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Dropbox/#soft/#ide/Data/Packages/Package Control/Package Control.sublime-settings",
-		"/C/Dropbox/#code/praca-inz/preambula_pakiety.tex",
-		"/C/Dropbox/#code/praca-inz/spis_rysunkow.tex [5]",
-		"/C/Program Files /MiKTeX 2.9/tex/latex/hyperref/hyperref.sty",
-		"/C/Dropbox/#code/praca-inz/dokument.aux",
-		"/C/Dropbox/#code/praca-inz/ in font nullfont!",
-		"/C/SkyDrive/Dokumenty/sample-new/tresc_dokumentu.tex",
-		"/C/SkyDrive/Dokumenty/sample-new/preambula_ustawienia.tex",
-		"/C/SkyDrive/Dokumenty/praca-inzynierska.tex",
-		"/C/SkyDrive/Dokumenty/sample-new/dokument.aux",
-		"/C/Dropbox/#soft/#ide/Data/Packages/User/JSON.sublime-settings",
-		"/C/Dropbox/#code/praca-inz/dokument.pdf",
-		"/C/Dropbox/#soft/#ide/Data/Packages/LaTeXTools/LaTeX.sublime-build",
-		"/C/SkyDrive/Dokumenty/sample-new/dokument.tex",
-		"/C/Dropbox/#urgent/git/README.portable",
-		"/C/Users/lenovo/.gitconfig",
-		"/C/SkyDrive/Dokumenty/sample-new/preambula_pakiety.tex",
-		"/C/SkyDrive/Dokumenty/sample-new/zalacznik.tex",
-		"/C/SkyDrive/Dokumenty/sample-new/strona_tytulowa.sty",
-		"/C/Dropbox/#learn/#self/romannumeric.rb"
+		"/C/Dropbox/#soft/#ide/Data/Packages/User/Ruby.sublime-settings"
 	],
 	"find":
 	{
@@ -636,6 +696,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"select",
+			"ams",
+			"connect",
 			"data",
 			"link",
 			"all_digest",
@@ -760,10 +823,7 @@
 			"terminal",
 			"unsrtnat",
 			"toc",
-			"red",
-			"table",
-			"center",
-			"} %{"
+			"red"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -791,7 +851,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -799,21 +859,21 @@
 					"file": "what_is_used.rb",
 					"settings":
 					{
-						"buffer_size": 995,
+						"buffer_size": 1156,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								592,
-								592
+								199,
+								199
 							]
 						],
 						"settings":
 						{
 							"auto_name": "what_is_used",
-							"function_name_status_row": 21,
+							"function_name_status_row": 18,
 							"spell_check": false,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
@@ -825,60 +885,57 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/cli/cli/bin/moviehasher.rb",
+					"file": "dokument.tex",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 5166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								683,
+								683
 							]
 						],
 						"settings":
 						{
-							"auto_name": "module MovieHasher",
-							"function_name_status_row": 0,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
+							"function_name_status_row": 6,
+							"keep focus": true,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 68.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "dokument.tex",
+					"file": "setup.txt",
 					"settings":
 					{
-						"buffer_size": 5161,
+						"buffer_size": 701,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								176,
-								176
+								49,
+								49
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 6,
-							"keep focus": false,
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_name": "miktex-portable:",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 24.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -895,8 +952,8 @@
 						"selection":
 						[
 							[
-								2320,
-								2320
+								190,
+								190
 							]
 						],
 						"settings":
@@ -906,7 +963,90 @@
 							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 326.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Downloader.rbw",
+					"settings":
+					{
+						"buffer_size": 6252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 16,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 48.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/moviehasher.rb",
+					"settings":
+					{
+						"buffer_size": 1212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								737,
+								720
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 34.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "preambula_pakiety.tex",
+					"settings":
+					{
+						"buffer_size": 4843,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								771,
+								771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -914,58 +1054,30 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 4,
-					"file": "/C/Dropbox/todo.txt",
+					"buffer": 7,
+					"file": "src/AccessDb.rb",
 					"settings":
 					{
-						"buffer_size": 169,
+						"buffer_size": 1188,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								83,
-								83
+								161,
+								161
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 3,
-							"syntax": "Packages/Todo.txt Syntax/todotxt.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/curb.rb",
-					"settings":
-					{
-						"buffer_size": 6048,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								311,
-								311
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 17,
+							"function_name_status_row": 13,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -974,11 +1086,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "src/curb.rbw",
+					"buffer": 8,
+					"file": "src/Etl.rb",
 					"settings":
 					{
-						"buffer_size": 6001,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -986,41 +1098,69 @@
 						[
 							[
 								0,
-								6001
+								0
 							]
 						],
 						"settings":
 						{
 							"function_name_status_row": 0,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3332.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
+					"file": "src/MapReduce.rb",
 					"settings":
 					{
-						"buffer_size": 2050,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								288,
-								234
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 7,
-							"syntax": "Packages/Diff/Diff.tmLanguage"
+							"auto_name": "mapreduce.rb",
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/C/#iso/win8-rp-key.txt",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "TK8TP-9JN6P-7X7WW-RFFTV-B7QPF",
+							"function_name_status_row": 0,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1072,10 +1212,6 @@
 	"output.exec":
 	{
 		"height": 182.0
-	},
-	"output.git":
-	{
-		"height": 98.0
 	},
 	"replace":
 	{
