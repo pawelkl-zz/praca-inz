@@ -84,20 +84,6 @@ if __FILE__ == $0; pp "Options:", options; pp "ARGV:", ARGV end
   exit!
 =end
 
-urls_to_download = [
-  'http://www.shapings.com/images/detailed/2/CVNESPT.jpg',
-  # 'http://www.opensubtitles.org/addons/avi/breakdance.avi', # 8e245d9679d31e12
-  # # 'http://www.opensubtitles.org/addons/avi/dummy.rar', # 61f7751fc2a72bfb
-  'http://static.skynetblogs.be/media/163667/1714742799.2.jpg',
-  # 'http://imgur.com/NMHpw.jpg',
-  # 'http://i.imgur.com/USdtc.jpg',
-  # 'http://i.imgur.com/Dexpm.jpg',
-  # 'http://www.shapings.com/images/detailed/2/CVNESPT.jpg',
-  # 'http://static3.blip.pl/user_generated/update_pictures/2639011.jpg',
-  # 'http://3.asset.soup.io/asset/3187/8131_3a06.jpeg',
-  # 'http://e.asset.soup.io/asset/3182/1470_9f47_500.jpeg',
-  'http://static3.blip.pl/user_generated/update_pictures/2638909.jpg'
-]
 
 class Downloader
   def initialize(directory)
@@ -111,6 +97,7 @@ class Downloader
     @c = Curl::Easy.new
     curl_setup
     AccessDb.connect
+    AccessDb.setup_collections
   end
 
   def curl_setup
@@ -166,7 +153,10 @@ class Downloader
     data["Hashes"] = hash
 
     @myjson = JSON.pretty_generate(data)
+    result = AccessDb.insert @myjson
     print @myjson
+    print result
+
   end
 
   def add_link(single_url,cred=nil,ref=nil,cookie=nil)
@@ -197,6 +187,7 @@ class Downloader
         # then parse_additional_info @save_location end
       # puts "#{@save_location} #{@hash}"
       parse_link_info single_url
+      id = update_db
       File.open(@save_location + ":meta.json","w").write @myjson
     end
   end
@@ -219,4 +210,22 @@ end
   stream_text = open('file.txt:stream1').read
 =end
 
-sleep(3)
+# sleep(3)
+
+if __FILE__ == $0
+  urls_to_download = [
+    'http://www.shapings.com/images/detailed/2/CVNESPT.jpg',
+    # 'http://www.opensubtitles.org/addons/avi/breakdance.avi', # 8e245d9679d31e12
+    # # 'http://www.opensubtitles.org/addons/avi/dummy.rar', # 61f7751fc2a72bfb
+    'http://static.skynetblogs.be/media/163667/1714742799.2.jpg',
+    # 'http://imgur.com/NMHpw.jpg',
+    # 'http://i.imgur.com/USdtc.jpg',
+    # 'http://i.imgur.com/Dexpm.jpg',
+    # 'http://www.shapings.com/images/detailed/2/CVNESPT.jpg',
+    # 'http://static3.blip.pl/user_generated/update_pictures/2639011.jpg',
+    # 'http://3.asset.soup.io/asset/3187/8131_3a06.jpeg',
+    # 'http://e.asset.soup.io/asset/3182/1470_9f47_500.jpeg',
+    'http://static3.blip.pl/user_generated/update_pictures/2638909.jpg'
+  ]
+  manager.add_links(urls_to_download)
+end
