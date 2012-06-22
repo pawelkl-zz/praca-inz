@@ -17,6 +17,7 @@ local.properties
 .loadpath
 *.bin
 *.avi
+*.jpg
 *.log
 *.1
 *.2
